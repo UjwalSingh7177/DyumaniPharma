@@ -12,7 +12,7 @@ import { ProductSectionComponent } from '../product-section-component/product-se
   selector: 'app-home',
   standalone: true,
   imports: [SliderComponent, CleanroomComponent, CleanroomCarouselComponent,
-    Coursel1, Coursel2, Coursel3, Coursel4, ProductSectionComponent
+    Coursel1, Coursel2, Coursel3, Coursel4
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
