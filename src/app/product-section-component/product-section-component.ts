@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
   selector: 'app-product-section',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './product-section.component.html',
-  styleUrls: ['./product-section.component.css']
+  templateUrl: './product-section-component.html',
+  styleUrls: ['./product-section-component.css']
 })
 export class ProductSectionComponent {
 
