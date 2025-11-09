@@ -1,0 +1,32 @@
+<section class="product-section">
+  <h2>Cleanrooms: Stick-Built & Modular</h2>
+
+  <div class="product-grid">
+
+    @for (p of products; track p.id) {
+      <article class="card"
+        (mouseenter)="setActive(p.id)"
+        (mouseleave)="setActive(null)"
+        (click)="toggleActive(p.id)"
+        [class.active]="activeId === p.id">
+
+        <div class="img-wrap">
+          <img [src]="p.img" [alt]="p.title" />
+        </div>
+
+        <div class="overlay">
+          <h3>{{ p.title }}</h3>
+          @if (p.subtitle) {
+            <h4>{{ p.subtitle }}</h4>
+          }
+          <p>{{ p.desc }}</p>
+        </div>
+
+        <div class="card-footer">
+          {{ p.title }}
+        </div>
+      </article>
+    }
+
+  </div>
+</section>

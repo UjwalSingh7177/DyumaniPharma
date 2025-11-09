@@ -1,0 +1,159 @@
+.footer {
+  background: #f5f7fa;
+  color: #111;
+  font-family: "Segoe UI", sans-serif;
+  border-top: 4px solid #005e73;
+}
+
+/* Header / Top section */
+.footer-top {
+  background: #005e73;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.footer-logo-img {
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+.footer-top h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.footer-top p {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+}
+
+/* Main Columns */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.4rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+  color: #005e73;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Contact section */
+.contact a {
+  color: #005e73;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  width: 32px;
+  height: 32px;
+  background: #005e73;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.social-icons a:hover {
+  background: #007c97;
+}
+
+/* Subscribe */
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.subscribe-form input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.subscribe-form button {
+  background: #005e73;
+  color: white;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.subscribe-form button:hover {
+  background: #007c97;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid #ccc;
+  padding: 1rem 0;
+  background: #f0f3f6;
+}
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.units select {
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.lab-logo {
+  height: 25px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}

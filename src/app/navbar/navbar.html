@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="top-bar">
+    <p>Worldwide Pricing and Secure Global Shipping Available!</p>
+  </div>
+
+  <div class="main-header">
+    <div class="logo-section">
+      <img src="assets/LogoBg.png" alt="Dyumani Logo" class="logo" />
+      <span class="company-name">Dyumani Pharma Equipments</span>
+    </div>
+
+    <div class="search-section">
+      <input type="text" placeholder="What can we help you find?" />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+  </div>
+
+  <nav [class.active]="menuOpen" class="nav-bar">
+    <a routerLink="/home">BROWSE PRODUCTS</a>
+    <a href="#">ABOUT US</a>
+    <a href="#">CLEANROOMS</a>
+    <a href="#">TECHNICAL RESOURCES</a>
+    <a href="#">APPLICATIONS</a>
+    <a href="#">GALLERY</a>
+  </nav>
+</header>

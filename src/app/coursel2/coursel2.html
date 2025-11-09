@@ -1,0 +1,32 @@
+<div class="cleanroom-container">
+  <div class="header">
+    <h2 class="section-title">
+      Doors for Hospitals, Labs and Pharmaceuticals
+      <a routerLink="/cleanrooms" class="see-all">(See All)</a>
+    </h2>
+  </div>
+
+  <div class="carousel-wrapper">
+    <button class="nav left" (click)="scrollLeft()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="carousel-container" #carousel>
+      @for (p of products; track $index) {
+        <article class="card">
+          <div class="img-box">
+            <img [src]="p.img" [alt]="p.title">
+            <div class="overlay">
+              <p>{{ p.description }}</p>
+            </div>
+          </div>
+          <h5>{{ p.title }}</h5>
+        </article>
+      }
+    </div>
+
+    <button class="nav right" (click)="scrollRight()">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="dual-wrapper">
+
+  <!-- Special offers -->
+  <section class="product-block">
+    <h2 class="title">Special Offers</h2>
+
+    <div class="product-list">
+      <div class="item" *ngFor="let product of specialOffers">
+        <img [src]="product.img" alt="">
+        <p>{{ product.title }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related items -->
+  <section class="product-block">
+    <h2 class="title">Related Items</h2>
+
+    <div class="product-list">
+      <div class="item" *ngFor="let item of relatedItems">
+        <img [src]="item.img" alt="">
+        <p>{{ item.title }}</p>
+      </div>
+    </div>
+  </section>
+
+</div>

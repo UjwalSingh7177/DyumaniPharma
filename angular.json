@@ -19,12 +19,19 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+               {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "assets"
+  },
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ]
           },
@@ -76,17 +83,27 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+               {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "assets"
+  },
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "376f991d-62e2-4e42-9adc-73fc71342890"
   }
 }

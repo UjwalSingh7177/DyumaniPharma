@@ -1,0 +1,42 @@
+<div class="slider-container">
+  <div class="slider">
+    <div
+      class="slides"
+      [style.transform]="'translateX(-' + currentSlide * 100 + '%)'"
+    >
+      <div class="slide" *ngFor="let image of images">
+        <img [src]="image" alt="Slide image" />
+      </div>
+    </div>
+
+    <!-- Navigation arrows -->
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+
+    <!-- Dots navigation -->
+    <div class="dots">
+      <span
+        *ngFor="let img of images; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+      ></span>
+    </div>
+  </div>
+</div>
+
+<!-- Text Section Below Slider -->
+<section class="text-section">
+  <h2>Cleanroom Solutions You Can Trust</h2>
+  <p>
+    Dyumani Universal designs, manufactures, and stocks comprehensive lines of
+    cleanrooms, air filtration systems, pass-through chambers, desiccator
+    cabinets, glove boxes, laminar flow hoods, cleanroom furnishings, and
+    laboratory equipment. We transform the world with innovative solutions that
+    improve health, safety, performance, and yields.
+  </p>
+  <p>
+    Browse and shop our vast selection of products and services. Not sure what
+    you need? Contact us today via phone, web chat, or email for help finding
+    the perfect solution for your unique application.
+  </p>
+</section>
