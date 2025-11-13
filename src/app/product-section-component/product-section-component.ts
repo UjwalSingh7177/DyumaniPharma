@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,42 +11,40 @@ import { RouterModule } from '@angular/router';
 })
 export class ProductSectionComponent {
 
+  @ViewChild('specialOffersRef', { static: false }) specialOffersRef!: ElementRef;
+  @ViewChild('relatedItemsRef', { static: false }) relatedItemsRef!: ElementRef;
+
   specialOffers = [
-    {
-      img: 'assets/item1.jpg',
-      title: 'Wall-Mount Glove Dispensers'
-    },
-    {
-      img: 'assets/item2.jpg',
-      title: 'ValuLine™ Wash Stations'
-    },
-    {
-      img: 'assets/item3.jpg',
-      title: 'Cleanroom Curtains and Strip Shields'
-    },
-    {
-      img: 'assets/item4.jpg',
-      title: 'HEPA Filters'
-    }
+    { img: 'assets/l3.webp', title: 'Wall-Mount Glove Dispensers' },
+    { img: 'assets/l3.webp', title: 'ValuLine™ Wash Stations' },
+    { img: 'assets/l3.webp', title: 'Cleanroom Curtains and Strip Shields' },
+    { img: 'assets/l3.webp', title: 'HEPA Filters' },
+    { img: 'assets/l3.webp', title: 'Wall-Mount Glove Dispensers' },
+    { img: 'assets/l3.webp', title: 'ValuLine™ Wash Stations' },
+    { img: 'assets/l3.webp', title: 'Cleanroom Curtains and Strip Shields' },
+    { img: 'assets/l3.webp', title: 'HEPA Filters' }
   ];
 
   relatedItems = [
-    {
-      img: 'assets/rel1.jpg',
-      title: 'LED Light Panels'
-    },
-    {
-      img: 'assets/rel2.jpg',
-      title: 'BioSafe Cleanroom Mirrors'
-    },
-    {
-      img: 'assets/rel3.jpg',
-      title: 'Cleanroom Talk-Through'
-    },
-    {
-      img: 'assets/rel4.jpg',
-      title: 'CleanMount Pass-Throughs'
-    }
+    { img: 'assets/l1.webp', title: 'LED Light Panels' },
+    { img: 'assets/l1.webp', title: 'BioSafe Cleanroom Mirrors' },
+    { img: 'assets/l1.webp', title: 'Cleanroom Talk-Through' },
+    { img: 'assets/l1.webp', title: 'CleanMount Pass-Throughs' },
+    { img: 'assets/l1.webp', title: 'LED Light Panels' },
+    { img: 'assets/l1.webp', title: 'BioSafe Cleanroom Mirrors' },
+    { img: 'assets/l1.webp', title: 'Cleanroom Talk-Through' },
+    { img: 'assets/l1.webp', title: 'CleanMount Pass-Throughs' }
   ];
 
+  /** Scroll left */
+  scrollLeft(section: 'specialOffers' | 'relatedItems') {
+    const target = section === 'specialOffers' ? this.specialOffersRef : this.relatedItemsRef;
+    target.nativeElement.scrollBy({ left: -300, behavior: 'smooth' });
+  }
+
+  /** Scroll right */
+  scrollRight(section: 'specialOffers' | 'relatedItems') {
+    const target = section === 'specialOffers' ? this.specialOffersRef : this.relatedItemsRef;
+    target.nativeElement.scrollBy({ left: 300, behavior: 'smooth' });
+  }
 }

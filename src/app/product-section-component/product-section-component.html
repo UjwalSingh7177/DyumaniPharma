@@ -1,27 +1,49 @@
 <div class="dual-wrapper">
-
-  <!-- Special offers -->
+  <!-- ===== SPECIAL OFFERS SECTION ===== -->
   <section class="product-block">
     <h2 class="title">Special Offers</h2>
 
-    <div class="product-list">
-      <div class="item" *ngFor="let product of specialOffers">
-        <img [src]="product.img" alt="">
-        <p>{{ product.title }}</p>
+    <div class="slider-wrapper">
+      <button class="nav left" (click)="scrollLeft('specialOffers')">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div #specialOffersRef class="slider-container">
+        <div class="slider-track">
+          <div class="slide-item" *ngFor="let product of specialOffers">
+            <img [src]="product.img" alt="">
+            <p>{{ product.title }}</p>
+          </div>
+        </div>
       </div>
+
+      <button class="nav right" (click)="scrollRight('specialOffers')">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </section>
 
-  <!-- Related items -->
+  <!-- ===== RELATED ITEMS SECTION ===== -->
   <section class="product-block">
     <h2 class="title">Related Items</h2>
 
-    <div class="product-list">
-      <div class="item" *ngFor="let item of relatedItems">
-        <img [src]="item.img" alt="">
-        <p>{{ item.title }}</p>
+    <div class="slider-wrapper">
+      <button class="nav left" (click)="scrollLeft('relatedItems')">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div #relatedItemsRef class="slider-container">
+        <div class="slider-track">
+          <div class="slide-item" *ngFor="let item of relatedItems">
+            <img [src]="item.img" alt="">
+            <p>{{ item.title }}</p>
+          </div>
+        </div>
       </div>
+
+      <button class="nav right" (click)="scrollRight('relatedItems')">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </section>
-
 </div>

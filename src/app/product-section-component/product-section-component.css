@@ -1,67 +1,197 @@
+/* ---------------- MAIN LAYOUT ---------------- */
 .dual-wrapper {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
 }
 
-/* Two blocks */
 .product-block {
   flex: 1;
   background: #ffffff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  min-width: 0;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 15px;
   color: #1d3557;
 }
 
-/* Items inside each block */
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+/* ---------------- SLIDER ---------------- */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.item {
-  text-align: center;
-}
-
-.item img {
+.slider-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
   width: 100%;
-  height: 130px;
-  object-fit: cover;
-  border-radius: 6px;
 }
 
-.item p {
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ✅ Always 2 rows */
+.slider-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: 150px;
+  gap: 18px 16px;
+  width: max-content;
+}
+
+.slide-item {
+  width: 150px;
+  flex-shrink: 0;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slide-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.slide-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slide-item p {
   font-size: 14px;
   margin-top: 8px;
   color: #333;
+  line-height: 1.3;
+  height: 38px;
+  overflow: hidden;
 }
 
-/* ------------ Responsive for Phones ------------ */
-@media (max-width: 768px) {
+/* ---------------- NAV BUTTONS ---------------- */
+.nav {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+.nav:hover {
+  background: #1d3557;
+  color: #fff;
+}
+
+.nav.left {
+  left: -10px;
+}
+
+.nav.right {
+  right: -10px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 992px) {
   .dual-wrapper {
     flex-direction: column;
+    padding: 10px;
   }
 
-  .product-list {
-    grid-template-columns: 1fr 1fr;
+  .product-block {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  /* ✅ Keep 2 rows, smaller columns */
+  .slider-track {
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 130px;
+    gap: 14px 10px;
+  }
+
+  .slide-item {
+    width: 130px;
+  }
+
+  .slide-item img {
+    height: 100px;
+  }
+
+  .slide-item p {
+    font-size: 13px;
+    height: 32px;
+  }
+
+  .nav {
+    width: 32px;
+    height: 32px;
   }
 }
 
-@media (max-width: 480px) {
-  .product-list {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  /* ✅ Still 2 rows, even smaller images */
+  .slider-track {
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: 120px;
+    gap: 12px 8px;
   }
 
-  .item img {
-    height: 150px;
+  .slide-item {
+    width: 120px;
+  }
+
+  .slide-item img {
+    height: 90px;
+  }
+
+  .slide-item p {
+    font-size: 12px;
+  }
+
+  .nav.left {
+    left: 0;
+  }
+
+  .nav.right {
+    right: 0;
+  }
+
+  .product-block {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 18px;
   }
 }
